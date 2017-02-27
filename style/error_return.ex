@@ -29,7 +29,7 @@ defmodule ErrorReturn do
       last_word <- List.last(words),
       {last_number, ""} <- Float.parse(last_word),
       {:ok, sqrt} <- sqrt_good(last_number),
-      # ??? <- sqrt_bad(last_number),
+      # sqrt when sqrt != :error <- sqrt_bad(last_number), # :((
       log <- :math.log10(sqrt)
     do
       {:ok, log}
